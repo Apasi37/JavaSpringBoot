@@ -1,15 +1,4 @@
-<h1>GET</h1>
-<img width="752" height="567" alt="image" src="https://github.com/user-attachments/assets/ca5099e7-865e-4789-85b6-3b6a600114e0" />
-<img width="762" height="408" alt="image" src="https://github.com/user-attachments/assets/cceb58f3-c157-4901-aca5-4466da15a8d9" />
+<img width="1503" height="860" alt="image" src="https://github.com/user-attachments/assets/5b619a0b-e742-4f13-82bb-3d2d840ae306" />
+<img width="1417" height="750" alt="image" src="https://github.com/user-attachments/assets/b6f781af-e3c9-48fa-b59f-12346bd8b618" />
+<img width="1472" height="869" alt="image" src="https://github.com/user-attachments/assets/8f196260-cad6-4138-b9f4-216cedc15149" />
 
-<h1>POST</h1>
-<img width="767" height="748" alt="image" src="https://github.com/user-attachments/assets/43dd90aa-ac85-4b57-96a4-3566fbec6962" />
-<img width="747" height="690" alt="image" src="https://github.com/user-attachments/assets/a99aa44b-cee3-4c1a-be62-f002f790ef84" />
-
-<h1>PUT</h1>
-<img width="759" height="741" alt="image" src="https://github.com/user-attachments/assets/09d1a795-7d99-4189-93a8-414d1a6eb942" />
-<img width="760" height="618" alt="image" src="https://github.com/user-attachments/assets/526a0e49-9a17-4b29-863f-5c062c624138" />
-
-<h1>DELETE</h1>
-<img width="742" height="358" alt="image" src="https://github.com/user-attachments/assets/99f42280-40d1-4cc0-b013-bb8ceca13015" />
-<img width="744" height="349" alt="image" src="https://github.com/user-attachments/assets/39a0ee09-097f-4b43-8fee-1d3f1a70a8db" />
