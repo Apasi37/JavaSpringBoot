@@ -35,13 +35,13 @@ public class Employee {
     private String email;
 
     @NotBlank(message = "Telefónne čislo je povinné")
-    @Size(min = 13, max = 15, message = "Priezvisko musí mať 13-15 znakov")
+    @Size(min = 13, max = 15, message = "Telefónne čislo musí mať 13-15 znakov")
     @Pattern(regexp = "^\\+421\\d{9}$" , message = "Telefónne číslo musí začínať +421 a obsahovať presne 9 číslic za ním.")
     @Column(name = "phone")
     private String phone;
 
-    @NotBlank(message = "Názov práce je povinný")
-    @Size(min = 2, max = 50, message = "Priezvisko musí mať 2-50 znakov")
+    @NotBlank(message = "Názov pozície je povinný")
+    @Size(min = 2, max = 50, message = "Názov pozície musí mať 2-50 znakov")
     @Column(name = "job_title")
     private String jobTitle;
 
@@ -51,12 +51,12 @@ public class Employee {
 
     @NotNull(message="Full time je povinný")
     @Column(name = "full_time")
-    private Boolean full_time;
+    private String full_time;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, LocalDate date, String email, String phone, String jobTitle, BigDecimal salary, Boolean full_time) {
+    public Employee(String firstName, String lastName, LocalDate date, String email, String phone, String jobTitle, BigDecimal salary, String full_time) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.date = date;
@@ -124,11 +124,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Boolean getFull_time() {
+    public String getFull_time() {
         return full_time;
     }
 
-    public void setFull_time(Boolean full_time) {
+    public void setFull_time(String full_time) {
         this.full_time = full_time;
     }
 

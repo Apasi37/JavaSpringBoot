@@ -32,10 +32,6 @@ public class EmployeeRestController {
 
         Employee Employee = EmployeeService.findById(id);
 
-        if (Employee == null) {
-            throw new RuntimeException("Employee id not found - " + id);
-        }
-
         return ResponseEntity.status(HttpStatus.OK).body(ApiResponse.success(Employee, "Employee sa našiel", LocalDateTime.now()));
     }
 
@@ -60,10 +56,6 @@ public class EmployeeRestController {
     public ResponseEntity<ApiResponse<Employee>> deleteEmployee(@PathVariable int id) {
 
         Employee Employee = EmployeeService.findById(id);
-
-        if (Employee == null) {
-            throw new RuntimeException("Employee id not found - " + id);
-        }
 
         EmployeeService.deleteById(id);
 
