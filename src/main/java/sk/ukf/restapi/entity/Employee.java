@@ -2,9 +2,11 @@ package sk.ukf.restapi.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "employee")
@@ -26,6 +28,8 @@ public class Employee {
 
     @NotNull(message="Dátum narodeniny je povinný")
     @Column(name = "birth_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Past(message = "Dátum narodenia musí byť v minulosti.")
     private LocalDate date;
 
     @NotBlank(message = "Email je povinný")
@@ -47,6 +51,9 @@ public class Employee {
 
     @NotNull(message="Plat je povinný")
     @Column(name = "salary")
+    @DecimalMin(value = "0.0", message = "Plat nemôže byť záporný")
+    @DecimalMax(value = "100000.0", message = "Plat musí byť menši ako 100000 ")
+    @Digits(integer=5, fraction=2)
     private BigDecimal salary;
 
     @NotNull(message="Full time je povinný")

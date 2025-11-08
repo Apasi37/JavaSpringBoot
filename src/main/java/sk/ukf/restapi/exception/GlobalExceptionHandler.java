@@ -1,21 +1,17 @@
 package sk.ukf.restapi.exception;
 
 
-import sk.ukf.restapi.dto.ApiResponse;
+import org.springframework.ui.Model;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-@RestControllerAdvice
+@ControllerAdvice
+//@RestControllerAdvice
 public class GlobalExceptionHandler {
-
+    /*
     // Validačné chyby
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiResponse<List<String>>> handleValidation(MethodArgumentNotValidException ex) {
@@ -44,5 +40,19 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(EmailAlreadyExistsException.class)
     public ResponseEntity<ApiResponse<String>> handleEmailExists(EmailAlreadyExistsException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(ApiResponse.error(ex.getMessage(), LocalDateTime.now()));
+    }
+    */
+
+    @ExceptionHandler(ObjectNotFoundException.class)
+    public String handleObjectNotFound(ObjectNotFoundException ex, Model model) {
+        model.addAttribute("error", ex.getMessage());
+        return "templates/error/not-found";
+    }
+
+    // Ostatné chyby
+    @ExceptionHandler(Exception.class)
+    public String handleGeneral(Exception ex, Model model) {
+        model.addAttribute("error", ex.getMessage());
+        return "templates/error/server-error";
     }
 }

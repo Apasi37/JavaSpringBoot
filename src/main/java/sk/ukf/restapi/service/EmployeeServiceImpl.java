@@ -26,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee findById(int id) {
-        return EmployeeRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Študent", id));
+        return EmployeeRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("employee", id));
     }
 
     @Transactional
@@ -50,7 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteById(int id) {
         if (!EmployeeRepository.existsById(id)) {
-            throw new ObjectNotFoundException("Študent", id);
+            throw new ObjectNotFoundException("employee", id);
         }
         EmployeeRepository.deleteById(id);
     }

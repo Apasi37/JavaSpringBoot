@@ -73,7 +73,7 @@
                 <tr th:each="employee : ${employees}">
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
-                    <td th:text="${#temporals.format(employee.date, 'dd.MM.yyyy')}"></td>
+                    <td th:text="${employee.date}"></td>
                     <td th:text="${employee.email}"></td>
                     <td th:text="${employee.phone}"></td>
                     <td>
